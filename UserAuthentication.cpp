@@ -3,7 +3,7 @@
 #include <unordered_map>
 using namespace std;
 
-unordered_map<std::string, UserData> userDatabase;
+unordered_map<string, UserData> userDatabase;
 
 void UserAuthentication::registerUser(string &username, string &password, UserType userType)
 {

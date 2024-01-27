@@ -22,6 +22,18 @@ void VirtualClassroom::run()
             cin >> password;
 
             UserType userType = UserAuthentication::authenticate(username, password);
+            if (userType == UserType::INVALID)
+            {
+                cout << "invalid entry\n";
+            }
+            else if (userType == UserType::STUDENT)
+            {
+                cout << "Logged in as student\n";
+            }
+            else if (userType == UserType::TEACHER)
+            {
+                cout << "Logged in as teacher\n";
+            }
             break;
         }
         case 2:
@@ -40,6 +52,10 @@ void VirtualClassroom::run()
             UserAuthentication::registerUser(username, password, static_cast<UserType>(userType));
             cout << "Registration successful! You can now log in." << endl;
             break;
+        }
+        case 3:
+        {
+            exit(0);
         }
         }
     }
