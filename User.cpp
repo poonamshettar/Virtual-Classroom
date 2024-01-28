@@ -6,6 +6,6 @@ User::User(string uname, string pwd, UserType type) : username(uname), password(
 
 User::~User() {}
 
-User::User() {}
+User::User() {} // default constructor
 
 void User::displaymenu() {}

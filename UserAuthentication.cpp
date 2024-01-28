@@ -32,13 +32,12 @@ User *UserAuthentication::getRegisteredUser(const std::string &username)
     {
         if (it->second.userType == UserType::STUDENT)
         {
-            return new Student(username, it->second.password, 4); // Adjust parameters accordingly
+            return new Student(username, it->second.password, 4);
         }
         else if (it->second.userType == UserType::TEACHER)
         {
-            return new Teacher(username, it->second.password, "teacherInfo"); // Adjust parameters accordingly
+            return new Teacher(username, it->second.password, "teacherInfo");
         }
-        // Add more conditions for other user types if needed
     }
     return nullptr;
 }
