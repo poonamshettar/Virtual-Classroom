@@ -56,7 +56,8 @@ void Teacher::displaymenu()
         cout << "1)Display personal info" << endl
              << "2)Add course" << endl
              << "3)Enrolled students" << endl
-             << "4)Log out" << endl;
+             << "4)Assign grades" << endl
+             << "5)Log out" << endl;
         cin >> choice;
         switch (choice)
         {
@@ -74,6 +75,9 @@ void Teacher::displaymenu()
             Enrolled_Students();
             break;
         case 4:
+            assign_grades();
+            break;
+        case 5:
         {
             return;
         }
