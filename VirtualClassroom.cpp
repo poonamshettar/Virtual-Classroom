@@ -26,9 +26,13 @@ void VirtualClassroom::run()
             cin >> password;
 
             UserType userType = auth.authenticate(username, password);
-            if (userType == UserType::INVALID)
+            if (userType == UserType::INVALID1)
             {
-                cout << "Username or Password wrong" << endl;
+                cout << "Username does not exist" << endl;
+            }
+            else if (userType == UserType::INVALID2)
+            {
+                cout << "Password incorrect" << endl;
             }
             else
             {

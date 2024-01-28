@@ -5,7 +5,8 @@ enum UserType
 {
     STUDENT,
     TEACHER,
-    INVALID
+    INVALID1,
+    INVALID2
 };
 
 #endif // USERTYPE_H

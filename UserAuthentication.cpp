@@ -16,13 +16,17 @@ void UserAuthentication::registerUser(string &username, string &password, UserTy
 UserType UserAuthentication::authenticate(string &username, string &password)
 {
     auto it = userDatabase.find(username);
-    if (it != userDatabase.end() && it->second.password == password)
+    if (it == userDatabase.end())
+    {
+        return UserType::INVALID1;
+    }
+    if (it->second.password == password)
     {
         return it->second.userType;
     }
     else
     {
-        return UserType::INVALID;
+        return UserType::INVALID2;
     }
 }
 User *UserAuthentication::getRegisteredUser(const std::string &username)
