@@ -24,15 +24,15 @@ void VirtualClassroom::run()
             UserType userType = UserAuthentication::authenticate(username, password);
             if (userType == UserType::INVALID)
             {
-                cout << "invalid entry\n";
+                cout << "Username or Password wrong" << endl;
             }
             else if (userType == UserType::STUDENT)
             {
-                cout << "Logged in as student\n";
+                cout << "Logged in as student" << endl;
             }
             else if (userType == UserType::TEACHER)
             {
-                cout << "Logged in as teacher\n";
+                cout << "Logged in as teacher" << endl;
             }
             break;
         }
@@ -57,6 +57,8 @@ void VirtualClassroom::run()
         {
             exit(0);
         }
+        default:
+            cout << "Invalid Entry" << endl;
         }
     }
 }
