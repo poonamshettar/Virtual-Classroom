@@ -9,7 +9,7 @@ Student::~Student() {}
 
 void Student::display_info()
 {
-    cout << studentID << endl;
+    cout << "studetn id is:" << studentID << endl;
 }
 
 void Student::enroll_course()

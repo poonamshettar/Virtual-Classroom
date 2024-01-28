@@ -7,7 +7,7 @@
 using namespace std;
 void VirtualClassroom::run()
 {
-    int x;
+    int x, id = 0;
     UserAuthentication auth;
     User *currentUser;
     while (1)
@@ -59,11 +59,16 @@ void VirtualClassroom::run()
 
             if (userType == UserType::STUDENT)
             {
-                newUser = new Student(username, password, 4);
+                id++;
+                newUser = new Student(username, password, id);
+                newUser->displaymenu();
             }
             else if (userType == UserType::TEACHER)
             {
-                newUser = new Teacher(username, password, "teacherInfo");
+                cout << "Enter Which subject u teach" << endl;
+                string new_user_subject;
+                newUser = new Teacher(username, password, new_user_subject);
+                newUser->displaymenu();
             }
 
             auth.registerUser(username, password, static_cast<UserType>(userType), newUser);
