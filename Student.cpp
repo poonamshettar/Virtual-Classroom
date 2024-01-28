@@ -18,7 +18,7 @@ void Student::display_info()
 void Student::enroll_course()
 {
     int course_id;
-    string c1, c2;
+    string c1;
     // cout << "No Courses";
     cout << "Enter course_id";
     cin >> course_id;
@@ -32,14 +32,18 @@ void Student::enroll_course()
     {
         istringstream iss(line);
         getline(iss, c1, '\t');
-        getline(iss, c2, '\t');
-        int c = stoi(c2);
+        getline(iss, c1, '\t');
+        int c = stoi(c1);
         if (c == course_id)
         {
             cout << "Selected course" << endl;
             cout << line << endl;
             write_enrollment(line);
         }
+    }
+    if (stoi(c1) < course_id)
+    {
+        cout << "Invalid course Id" << endl;
     }
     ip.close();
 }

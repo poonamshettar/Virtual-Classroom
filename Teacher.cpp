@@ -36,7 +36,7 @@ void Teacher::Enrolled_Students()
     ifstream ip(temp);
     if (!ip.is_open())
     {
-        cerr << "Error opening File";
+        cerr << "No Students Registerd" << endl;
     }
     string line;
     while (getline(ip, line))
