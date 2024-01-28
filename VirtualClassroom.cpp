@@ -30,18 +30,16 @@ void VirtualClassroom::run()
             {
                 cout << "Username or Password wrong" << endl;
             }
-            else if (userType == UserType::STUDENT)
+            else
             {
-                cout << "Logged in as student" << endl;
-                Student student(username, password, 4);
-                currentUser = new Student(username, password, 4);
-                currentUser->displaymenu();
-            }
-            else if (userType == UserType::TEACHER)
-            {
-                cout << "Logged in as teacher" << endl;
-                currentUser = new Teacher(username, password, "abhi");
-                currentUser->displaymenu();
+                User *user = auth.getRegisteredUser(username);
+                if (user != nullptr)
+                {
+                    currentUser = user;
+                    currentUser->displaymenu();
+                    delete currentUser;
+                    currentUser = nullptr;
+                }
             }
             break;
         }
