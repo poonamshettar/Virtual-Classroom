@@ -13,6 +13,7 @@ public:
     Teacher(string uname, string pwd, int id_t);
     ~Teacher() override;
     virtual void displaymenu() override;
+    void Enrolled_Students();
     void display_info();
     void add_course();
 };

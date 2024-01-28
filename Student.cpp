@@ -38,9 +38,31 @@ void Student::enroll_course()
         {
             cout << "Selected course" << endl;
             cout << line << endl;
+            write_enrollment(line);
         }
     }
     ip.close();
+}
+
+void Student::write_enrollment(string courseInfo)
+{
+    istringstream iss(courseInfo);
+    string courseName;
+    getline(iss, courseName, '\t');
+    getline(iss, courseName, '\t');
+    getline(iss, courseName, '\t');
+
+    string fileName = courseName + ".txt";
+
+    ofstream enrollmentFile(fileName, ios::app);
+    if (!enrollmentFile.is_open())
+    {
+        cerr << "Error opening enrollment file";
+        return;
+    }
+    enrollmentFile << username << endl;
+
+    enrollmentFile.close();
 }
 
 void Student::display_course_list()

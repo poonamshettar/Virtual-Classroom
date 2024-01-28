@@ -26,6 +26,27 @@ void Teacher::add_course()
     op.close();
 }
 
+void Teacher::Enrolled_Students()
+{
+    string temp;
+    cout << "Enter the list wanted" << endl;
+    cin >> temp;
+    cout << "List of enrolled students" << endl;
+    temp = temp + ".txt";
+    ifstream ip(temp);
+    if (!ip.is_open())
+    {
+        cerr << "Error opening File";
+    }
+    string line;
+    while (getline(ip, line))
+    {
+        cout << line << endl;
+    }
+    ip.close();
+    cout << endl;
+}
+
 void Teacher::displaymenu()
 {
     cout << "Teacher logged in\n";
@@ -34,7 +55,8 @@ void Teacher::displaymenu()
         int choice;
         cout << "1)Display personal info" << endl
              << "2)Add course" << endl
-             << "3)Log out" << endl;
+             << "3)Enrolled students" << endl
+             << "4)Log out" << endl;
         cin >> choice;
         switch (choice)
         {
@@ -49,6 +71,9 @@ void Teacher::displaymenu()
             break;
         }
         case 3:
+            Enrolled_Students();
+            break;
+        case 4:
         {
             return;
         }
