@@ -4,7 +4,7 @@
 class Course
 {
 public:
-    void display_course();
+    void display_grades();
     void assign_grades();
 };
 

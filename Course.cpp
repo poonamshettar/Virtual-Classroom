@@ -43,3 +43,22 @@ void Course::assign_grades()
     inputFile.close();
     outputFile.close();
 }
+
+void Course::display_grades()
+{
+    cout << "Enter the course name" << endl;
+    string course_name;
+    cin >> course_name;
+    string ipfile = course_name + ".txt";
+    ifstream ip(ipfile);
+    if (!ip.is_open())
+    {
+        cerr << "grades not updated yet" << endl;
+    }
+    string line;
+    while (getline(ip, line))
+    {
+        cout << line << endl;
+    }
+    ip.close();
+}
