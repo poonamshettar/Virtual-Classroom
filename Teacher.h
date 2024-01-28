@@ -7,12 +7,14 @@ using namespace std;
 class Teacher : public User
 {
 private:
-    std::string subject;
+    int subject;
 
 public:
-    Teacher(string uname, string pwd, string sub);
+    Teacher(string uname, string pwd, int id_t);
     ~Teacher() override;
     virtual void displaymenu() override;
+    void display_info();
+    void add_course();
 };
 
 #endif

@@ -15,6 +15,7 @@ public:
     void displaymenu() override;
     void display_info();
     void enroll_course();
+    void display_course_list();
 };
 
 #endif
