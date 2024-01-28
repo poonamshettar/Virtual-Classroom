@@ -22,7 +22,7 @@ void Teacher::add_course()
     {
         cerr << "Error opening File";
     }
-    op << subject << '\t' << course_id++ << '\t' << new_user_subject << endl;
+    op << subject << '\t' << course_id++ << "\t" << new_user_subject << endl;
     op.close();
 }
 
@@ -49,7 +49,9 @@ void Teacher::Enrolled_Students()
 
 void Teacher::displaymenu()
 {
-    cout << "Teacher logged in\n";
+    cout << endl
+         << "Teacher logged in" << endl;
+
     while (1)
     {
         int choice;
@@ -57,7 +59,8 @@ void Teacher::displaymenu()
              << "2)Add course" << endl
              << "3)Enrolled students" << endl
              << "4)Assign grades" << endl
-             << "5)Log out" << endl;
+             << "5)See assigned grades" << endl
+             << "6)Log out" << endl;
         cin >> choice;
         switch (choice)
         {
@@ -78,6 +81,9 @@ void Teacher::displaymenu()
             assign_grades();
             break;
         case 5:
+            display_grades();
+            break;
+        case 6:
         {
             return;
         }
@@ -87,12 +93,3 @@ void Teacher::displaymenu()
         }
     }
 }
-
-// void Teacher::read_()
-// {
-//     ofstream op("course_list.txt", ios::app);
-//     if (op.is_open())
-//     {
-//         cerr << "Error opening File";
-//     }
-// }

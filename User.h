@@ -2,6 +2,7 @@
 #define USER_H
 
 #include <string>
+#include <iomanip>
 #include "UserType.h"
 
 using namespace std;

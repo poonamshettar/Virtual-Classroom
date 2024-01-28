@@ -12,7 +12,7 @@ void VirtualClassroom::run()
     User *currentUser;
     while (1)
     {
-        cout << "1)Log in\n2)Regsiter\n3)exit\n";
+        cout << "1)Log in\n2)Register\n3)exit\n";
         cin >> x;
         switch (x)
         {

@@ -49,7 +49,7 @@ void Course::display_grades()
     cout << "Enter the course name" << endl;
     string course_name;
     cin >> course_name;
-    string ipfile = course_name + ".txt";
+    string ipfile = course_name + "_grade.txt";
     ifstream ip(ipfile);
     if (!ip.is_open())
     {

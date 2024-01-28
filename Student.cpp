@@ -20,7 +20,7 @@ void Student::enroll_course()
     int course_id;
     string c1;
     // cout << "No Courses";
-    cout << "Enter course_id";
+    cout << "Enter Course Code ";
     cin >> course_id;
     ifstream ip("course_list.txt");
     if (!ip.is_open())
@@ -76,6 +76,8 @@ void Student::display_course_list()
     {
         cerr << "Error opening File";
     }
+    cout << "ID" << setw(8) << "Code" << setw(15) << "Course Name" << endl;
+    cout << "--------------------------------------" << endl;
     string line;
     while (getline(ip, line))
     {
@@ -90,9 +92,10 @@ void Student::displaymenu()
     {
         int choice;
         cout << "1)Display personal info" << endl
-             << "2)dispaly available course list" << endl
+             << "2)display available course list" << endl
              << "3)enroll course" << endl
-             << "4)Log out" << endl;
+             << "4)View grades" << endl
+             << "5)Log out" << endl;
         cin >> choice;
         switch (choice)
         {
@@ -112,6 +115,11 @@ void Student::displaymenu()
             break;
         }
         case 4:
+        {
+            display_grades();
+            break;
+        }
+        case 5:
         {
             return;
         }
