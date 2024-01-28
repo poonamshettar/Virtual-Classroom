@@ -2,14 +2,8 @@
 #define USERAUTHENTICATION_H
 
 #include <string>
+#include "UserType.h"
 using namespace std;
-
-enum UserType
-{
-    STUDENT,
-    TEACHER,
-    INVALID
-};
 
 struct UserData
 {
@@ -20,8 +14,8 @@ struct UserData
 class UserAuthentication
 {
 public:
-    static void registerUser(string &username, string &password, UserType userType);
-    static UserType authenticate(string &username, string &password);
+    void registerUser(string &username, string &password, UserType userType);
+    UserType authenticate(string &username, string &password);
 };
 
 #endif
