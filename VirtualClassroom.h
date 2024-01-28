@@ -5,9 +5,6 @@ class VirtualClassroom
 {
 public:
     void run();
-
-private:
-    int fun;
 };
 
 #endif

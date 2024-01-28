@@ -1,11 +1,15 @@
 #include <iostream>
 #include "VirtualClassroom.h"
 #include "UserAuthentication.h"
+#include "Teacher.h"
+#include "Student.h"
 
 using namespace std;
 void VirtualClassroom::run()
 {
     int x;
+    UserAuthentication auth;
+    User *currentUser;
     while (1)
     {
         cout << "1)Log in\n2)Regsiter\n3)exit\n";
@@ -21,7 +25,7 @@ void VirtualClassroom::run()
             cout << "Enter password: ";
             cin >> password;
 
-            UserType userType = UserAuthentication::authenticate(username, password);
+            UserType userType = auth.authenticate(username, password);
             if (userType == UserType::INVALID)
             {
                 cout << "Username or Password wrong" << endl;
@@ -29,10 +33,15 @@ void VirtualClassroom::run()
             else if (userType == UserType::STUDENT)
             {
                 cout << "Logged in as student" << endl;
+                Student student(username, password, 4);
+                currentUser = new Student(username, password, 4);
+                currentUser->displaymenu();
             }
             else if (userType == UserType::TEACHER)
             {
                 cout << "Logged in as teacher" << endl;
+                currentUser = new Teacher(username, password, "abhi");
+                currentUser->displaymenu();
             }
             break;
         }
@@ -49,7 +58,7 @@ void VirtualClassroom::run()
 
             UserType userType = static_cast<UserType>(userTypeInt);
 
-            UserAuthentication::registerUser(username, password, static_cast<UserType>(userType));
+            auth.registerUser(username, password, static_cast<UserType>(userType));
             cout << "Registration successful! You can now log in." << endl;
             break;
         }
