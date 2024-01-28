@@ -9,7 +9,7 @@ Student::~Student() {}
 
 void Student::display_info()
 {
-    cout << studentID << endl;
+    cout << "studetn id is:" << studentID << endl;
 }
 
 void Student::enroll_course()
@@ -24,7 +24,7 @@ void Student::displaymenu()
         int choice;
         cout << "1)Display personal info" << endl
              << "2)enroll course" << endl
-             << "3)exit" << endl;
+             << "3)Log out" << endl;
         cin >> choice;
         switch (choice)
         {

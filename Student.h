@@ -13,6 +13,8 @@ public:
     Student(string uname, string pwd, int id);
     ~Student() override;
     void displaymenu() override;
+    void display_info();
+    void enroll_course();
 };
 
 #endif
