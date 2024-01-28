@@ -55,8 +55,18 @@ void VirtualClassroom::run()
             cin >> userTypeInt;
 
             UserType userType = static_cast<UserType>(userTypeInt);
+            User *newUser;
 
-            auth.registerUser(username, password, static_cast<UserType>(userType));
+            if (userType == UserType::STUDENT)
+            {
+                newUser = new Student(username, password, 4);
+            }
+            else if (userType == UserType::TEACHER)
+            {
+                newUser = new Teacher(username, password, "teacherInfo");
+            }
+
+            auth.registerUser(username, password, static_cast<UserType>(userType), newUser);
             cout << "Registration successful! You can now log in." << endl;
             break;
         }

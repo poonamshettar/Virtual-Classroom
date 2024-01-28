@@ -24,7 +24,7 @@ void Student::displaymenu()
         int choice;
         cout << "1)Display personal info" << endl
              << "2)enroll course" << endl
-             << "3)exit" << endl;
+             << "3)Log out" << endl;
         cin >> choice;
         switch (choice)
         {
