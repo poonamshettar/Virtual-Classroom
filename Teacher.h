@@ -2,9 +2,10 @@
 #define TEACHER_H
 
 #include "User.h"
+#include "Course.h"
 using namespace std;
 
-class Teacher : public User
+class Teacher : public User, public Course
 {
 private:
     int subject;

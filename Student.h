@@ -2,9 +2,10 @@
 #define STUDENT_H
 
 #include "User.h"
+#include "Course.h"
 using namespace std;
 
-class Student : public User
+class Student : public User, public Course
 {
 private:
     int studentID;
