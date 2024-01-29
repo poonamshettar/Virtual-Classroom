@@ -10,7 +10,7 @@ Teacher::~Teacher() {}
 int course_id = 0;
 void Teacher::display_info()
 {
-    cout << "Teacher\n";
+    cout << "Teacher id is:" << subject << endl;
 }
 void Teacher::add_course()
 {
